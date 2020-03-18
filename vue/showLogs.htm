@@ -3,12 +3,25 @@
         <meta http-equiv="content-type" content="text/html; charset=utf-8">
     </head>
     <body>
-        <!-- 開發環境版本 -->
-        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<style>
+
+</style>
+        <script src="js/vendor/vue.js"></script>
+        <script src="js/vendor/axios.min.js"></script>
         <div id="app">
-            {{ message }}
-            {{ time }}            
+            <!-- {{ message }} -->
+
+            <p style="color:red;">
+            {{ memo }}          
+            </p>
+            <p>
+            <div class="logData">
+                <div v-html="message"></div>
+            </div>
+            </p>
+            Seconds remaining: {{ time }}
          </div>
-        <script src="js/getLogs.js"></script>
+
+        <script src="js/vueAxiosPost.js"></script>
     </body>
 </html>
