@@ -9,7 +9,7 @@
             String inputDataLength = request.getParameter("dataLength");
             String inputDataLine = request.getParameter("dataCounter");
             if(inputDataLength != null){
-                String FileName = "logexample.txt";
+                String FileName = "logExample.txt";
                 File file = new File(FileName);
                 if(file.exists()){
                     long FileLength=file.length();
@@ -31,9 +31,21 @@
                             if(LastCount!=0 && counter <= LastCount){
                                 continue;
                             }
+                            int idxTmp=content.indexOf("ignore");
+                            if( idxTmp > -1){
+                                continue;
+                            }
                             content = content.replace("<","&lt;");
                             content = content.replace(">","&gt;");
-   
+                            idxTmp=content.indexOf("[ERROR]");
+                            if( idxTmp > -1){
+                                content = content.replace("[ERROR]","<span class='error'>[ERROR]</span>");
+                            }
+                            idxTmp=content.indexOf("hightLight");
+                            if( idxTmp > -1){
+                                content = content.replace("hightLight","<span class='highlight'>createIdentifyID</span>");
+                            }
+
                             content = new String(content.getBytes("8859_1"),"UTF-8");
 
                             content = content+"<br>";
@@ -50,9 +62,6 @@
                         json.put("size", FileLength);
                         json.put("line", counter);
                         json.put("content", PrintResult);
-                        if(LastCount!=0){
-                            response.setStatus(206);
-                        }
                         out.print(json.toString());
 
                     }else{
