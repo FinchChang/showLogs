@@ -6,20 +6,23 @@
 <style>
 
 </style>
-        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-        <div id="app">
-            <!-- {{ message }} -->
+        <script src="js/vendor/vue.js"></script>
+        <script src="js/vendor/axios.min.js"></script>
 
+        <link rel="stylesheet" type="text/css" href="css/style.css"/>
+        <div class="logBody "id="app">
             <p style="color:red;">
-            {{ memo }}          
+            {{ memo }}
             </p>
             <p>
             <div class="logData">
                 <div v-html="message"></div>
             </div>
+                  <button class="to-bottom f-btn" type="button" @click="scrollStatusChange()">{{ scrollEndName }}</button>
             </p>
+            <div>
             Seconds remaining: {{ time }}
+            </div>
          </div>
 
         <script src="js/vueAxiosPost.js"></script>
