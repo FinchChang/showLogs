@@ -1,0 +1,54 @@
+.error{
+    color: red;
+    font-weight:bold;
+}
+.logBody{
+    font-family: Times, "Times New Roman", serif;
+}
+.highlight{
+  position: relative;
+}
+.highlight:before{
+  content: "";
+  z-index: -1;
+  position: absolute;
+  height: 0.7em;
+  top: 0.6em;
+  background: red;
+  width: 100%;
+
+  /* IE 8 */
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=55)";
+
+  /* IE 5-7 */
+  filter: alpha(opacity=55);
+
+  /* Netscape */
+  -moz-opacity: 0.55;
+
+  /* Safari 1.x */
+  -khtml-opacity: 0.55;
+
+  /* Good browsers */
+  opacity: 0.55;
+}
+
+.to-bottom{
+    text-align:center;
+    color:black;
+    display:inline-block;/* or block */
+    position:relative;
+    border-color:black;
+    text-decoration:none;
+    transition:all .3s ease-out;
+}
+
+.f-btn{
+    border-radius: 6px;
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+    display: block;
+    opacity: .5;
+    transition: .5s;
+}
