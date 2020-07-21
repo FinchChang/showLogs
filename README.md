@@ -1,8 +1,8 @@
 # showLogs
 Read logs from file and show on Web
 
-# JSP
+## JSP
 Use only JSP to read and show on the web
 
-# Vue
+## Vue
 Use Vue.js to read and show on the web
